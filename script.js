@@ -7,32 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const pingBar = document.getElementById('ping-bar');
     const downloadBar = document.getElementById('download-bar');
     const uploadBar = document.getElementById('upload-bar');
-    const serverLocation = document.getElementById('server-location');
-    const userIp = document.getElementById('user-ip');
     
     let testInProgress = false;
     let downloadTestData = [];
     let uploadTestData = [];
-    
-    // Mock server locations (in a real app, you'd get this from an API)
-    const servers = [
-        { name: "Jakarta, Indonesia", ping: 0 },
-        { name: "Singapore", ping: 0 },
-        { name: "Tokyo, Japan", ping: 0 }
-    ];
-    
-    // Initialize
-    serverLocation.textContent = "Jakarta, Indonesia";
-    
-    // Get user IP (mock for this example)
-    fetch('https://api.ipify.org?format=json')
-        .then(response => response.json())
-        .then(data => {
-            userIp.textContent = data.ip;
-        })
-        .catch(() => {
-            userIp.textContent = "Not available";
-        });
     
     // Start test
     startBtn.addEventListener('click', startSpeedTest);
