@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Speed Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center p-4">
+    <div class="bg-white rounded-xl shadow-lg p-8 w-full max-w-2xl">
+        <h1 class="text-3xl font-bold text-center text-blue-600 mb-6">TestNet</h1>
+        
+        <div class="flex flex-col space-y-6">
+            <!-- Ping Test -->
+            <div class="bg-gray-50 p-4 rounded-lg">
+                <div class="flex justify-between items-center mb-2">
+                    <h2 class="text-lg font-semibold text-gray-700">Ping</h2>
+                    <span id="ping-result" class="text-xl font-bold">-</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div id="ping-bar" class="bg-blue-600 h-2.5 rounded-full" style="width: 0%"></div>
+                </div>
+            </div>
+            
+            <!-- Download Test -->
+            <div class="bg-gray-50 p-4 rounded-lg">
+                <div class="flex justify-between items-center mb-2">
+                    <h2 class="text-lg font-semibold text-gray-700">Download Speed</h2>
+                    <span id="download-result" class="text-xl font-bold">-</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div id="download-bar" class="bg-green-500 h-2.5 rounded-full" style="width: 0%"></div>
+                </div>
+            </div>
+            
+            <!-- Upload Test -->
+            <div class="bg-gray-50 p-4 rounded-lg">
+                <div class="flex justify-between items-center mb-2">
+                    <h2 class="text-lg font-semibold text-gray-700">Upload Speed</h2>
+                    <span id="upload-result" class="text-xl font-bold">-</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div id="upload-bar" class="bg-purple-500 h-2.5 rounded-full" style="width: 0%"></div>
+                </div>
+            </div>
+            
+            <!-- Server Info -->
+            <div class="bg-gray-50 p-4 rounded-lg">
+                <h2 class="text-lg font-semibold text-gray-700 mb-2">Server Information</h2>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <p class="text-sm text-gray-500">Server Location</p>
+                        <p id="server-location" class="font-medium">-</p>
+                    </div>
+
+                </div>
+            </div>
+            
+            
+            <!-- Control Buttons -->
+            <div class="flex justify-center">
+                <button id="start-test" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 flex items-center">
+                    <i class="fas fa-play mr-2"></i> Start Test
+                </button>
+                <button id="stop-test" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 ml-4 hidden">
+                    <i class="fas fa-stop mr-2"></i> Stop Test
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mt-8 text-center text-gray-500 text-sm">
+        <p>Note: Speed test results may vary based on network conditions and server load.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
